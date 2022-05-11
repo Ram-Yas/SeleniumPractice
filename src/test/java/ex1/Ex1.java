@@ -30,16 +30,46 @@ public class Ex1 {
         driver.get("https://www.amazon.com/");
 
         //4. Sayfa basligini(title) yazdirin
-        System.out.println(driver.getTitle());
+        System.out.println("Sayfa basligi : "+driver.getTitle());
 
         //5. Sayfa basliginin “Amazon” icerdigini test edin
-        System.out.println(driver.getTitle().contains("Amazon")); // true
+        String arananBaslik = "Amazon";
+        if (driver.getTitle().contains(arananBaslik)){
+            System.out.println(arananBaslik+ " testi PASSED");
+        } else {
+            System.out.println(arananBaslik+ " testi FAILED");
+        }
+
 
         //    6. Sayfa adresini(url) yazdirin
         System.out.println(driver.getCurrentUrl()); //https://www.amazon.com/
 
         //    7. Sayfa url’inin “amazon” icerdigini test edin.
-        System.out.println(driver.getCurrentUrl().contains("amazon")); // true
+        String arananUrl = "amazon";
+        if (driver.getCurrentUrl().contains(arananUrl)){
+            System.out.println(arananUrl+ " testi PASSED");
+        } else {
+            System.out.println(arananUrl+ " testi FAILED");
+        }
+
+        // 8. Sayfa handle degerini yazdirin
+
+
+        //   9. Sayfa HTML kodlarinda “alisveris” kelimesi gectigini test edin
+
+        String pageSources = driver.getPageSource();
+        String arananKelime ="alisveris";
+
+        if (pageSources.contains(arananKelime)){
+            System.out.println(arananKelime+" testi PASSED");
+        } else {
+            System.out.println(arananKelime+" testi FAILED");
+        }
+
+        //    10. Sayfayi kapatin.
+        driver.close();
+
+
     }
 
 }
