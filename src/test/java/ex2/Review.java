@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class Review {
 
@@ -19,7 +20,7 @@ public class Review {
         d. “Shopping” e tıklayın.
         e. Sonra karşınıza çıkan ilk sonucun resmine tıklayın
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
 
@@ -35,11 +36,20 @@ public class Review {
 
         // c. Amazon'da görüntülenen ilgili sonuçların sayısını yazdırın  yapamadim
 
+        List<WebElement> istenenElementlerListesi = driver.findElements(By.className("sg-col-inner"));
+        WebElement sonucYazisi = istenenElementlerListesi.get(0);
+
+        System.out.println(sonucYazisi.getText());
+
         //        d. “Shopping” e tıklayın. shopping yok
         //        e. Sonra karşınıza çıkan ilk sonucun resmine tıklayın
 
+        List<WebElement> urunListesiResimleri = driver.findElements(By.className("s-image"));
+        WebElement ucuncuUrunResmi = urunListesiResimleri.get(2);
+        ucuncuUrunResmi.click();
+        Thread.sleep(2000);
 
-
+        driver.quit();
 
 
     }
