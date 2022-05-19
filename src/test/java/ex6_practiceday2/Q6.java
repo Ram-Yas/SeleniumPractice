@@ -37,7 +37,7 @@ public class Q6 {
     }
     @After
     public void cikis(){
-        //driver.close();
+        driver.close();
     }
     @Test
     public void test(){
@@ -59,7 +59,7 @@ public class Q6 {
         driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("Les Miserables"+ Keys.ENTER);
         // 4. Sonuc sayisini ekrana yazdiralim.
         WebElement sonucSayisi = driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
-        System.out.println("Bulunan sonux ==c sayisi "+ sonucSayisi.getText().split("over")[1].replaceAll("\\D",""));
+        System.out.println("Bulunan sonuc sayisi "+ sonucSayisi.getText().split("over")[1].replaceAll("\\D",""));
         // 5. Sonucların Les Miserables i icerdigini assert edelim
         String expectedResult = "Les Miserables";
         String actualResult = sonucSayisi.getText();
