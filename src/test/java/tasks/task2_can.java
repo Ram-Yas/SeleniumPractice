@@ -33,6 +33,7 @@ public class task2_can extends TestBase {
       String sepeteAtilanUrunText = sepeteAtilanUrun.getText();
       Assert.assertTrue(sepeteAtilanUrunText.contains(ilkUrunIsmi));
            //9. Sayfayi kapatin
+
     }
 
 
