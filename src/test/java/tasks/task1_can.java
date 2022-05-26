@@ -25,7 +25,7 @@ public class task1_can extends TestBase {
 
         //this line is for the cookies
         driver.findElement(By.xpath("//input[@id='sp-cc-accept']")).click();
-        //2. Search iPhone13 512
+        //2. Sea rch iPhone13 512
         driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("iPhone13 512" + Keys.ENTER);
 
         //3. Check that the results are listed
